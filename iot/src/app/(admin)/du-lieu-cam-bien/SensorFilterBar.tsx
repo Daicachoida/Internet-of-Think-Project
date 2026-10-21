@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Search, ChevronDown, SlidersHorizontal, RefreshCw } from 'lucide-react';
 import { SENSOR_TYPE_OPTIONS } from './const';
 
@@ -24,6 +24,7 @@ export const SensorFilterBar: React.FC<SensorFilterBarProps> = ({
   // ─── Biến ──────────────────────────────────────────────────────────────────
   const [keyword, setKeyword] = useState(appliedSearch);
   const [sensorType, setSensorType] = useState(appliedSensorType);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // ─── Function (useCallback) ────────────────────────────────────────────────
   const handleKeywordChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +32,13 @@ export const SensorFilterBar: React.FC<SensorFilterBarProps> = ({
   }, []);
 
   const handleSensorTypeChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSensorType(e.target.value);
+    const val = e.target.value;
+    setSensorType(val);
+    if (val === 'time') {
+      setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 50);
+    }
   }, []);
 
   const handleSearchSubmit = useCallback(() => {
@@ -69,16 +76,21 @@ export const SensorFilterBar: React.FC<SensorFilterBarProps> = ({
         {/* Search Keyword */}
         <div className="flex-1 min-w-[220px]">
           <label className="block text-xs font-semibold text-slate-700 mb-1">
-            Từ khóa tìm kiếm
+            {sensorType === 'time' ? 'Nhập thời gian tìm kiếm' : 'Từ khóa tìm kiếm'}
           </label>
           <div className="relative">
             <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
+              ref={searchInputRef}
               type="text"
               value={keyword}
               onChange={handleKeywordChange}
               onKeyDown={handleKeyDown}
-              placeholder="Nhập ID, ngày (22/09), giờ (20h), giá trị..."
+              placeholder={
+                sensorType === 'time'
+                  ? 'Nhập ngày tháng (VD: 21/10/2026, 21/10), giờ (18h, 18:15)...'
+                  : 'Nhập ID, ngày (21/10), giờ (18h), giá trị...'
+              }
               className="w-full pl-9 pr-3.5 py-2 rounded-lg border border-slate-300 bg-white text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7a1f36]/20 focus:border-[#7a1f36] transition-colors"
             />
           </div>

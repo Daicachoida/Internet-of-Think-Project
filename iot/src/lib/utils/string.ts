@@ -26,7 +26,12 @@ export function matchDateTimeQuery(recordTimeStr: string, rawQuery: string): boo
   const datePart = parts[0] || '';
   const timePart = parts[1] || '';
 
-  const [year = '', month = '', day = ''] = datePart.split('-');
+  let year = '', month = '', day = '';
+  if (datePart.includes('/')) {
+    [day = '', month = '', year = ''] = datePart.split('/');
+  } else {
+    [year = '', month = '', day = ''] = datePart.split('-');
+  }
   const [hour = '', minute = '', second = ''] = timePart.split(':');
 
   const mInt = parseInt(month, 10);

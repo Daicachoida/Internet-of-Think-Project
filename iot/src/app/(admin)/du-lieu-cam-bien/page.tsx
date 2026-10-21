@@ -18,6 +18,19 @@ export const SensorDataPage: React.FC = () => {
   // ─── useMemo (Filter & Sort) ───────────────────────────────────────────────
   const filtered = useMemo(() => {
     return sensorRecords.filter((r) => {
+      // Nếu chọn mục 'Thời gian', chỉ tìm kiếm khớp với trường thời gian
+      if (sensorTypeFilter === 'time') {
+        if (!search.trim()) return true;
+        const q = search.trim().toLowerCase();
+        return r.time.toLowerCase().includes(q) || matchDateTimeQuery(r.time, search);
+      }
+
+      // Nếu chọn loại cảm biến cụ thể (Nhiệt độ, Ánh sáng, Độ ẩm)
+      if (sensorTypeFilter !== 'all' && r.sensorType !== sensorTypeFilter) {
+        return false;
+      }
+
+      // Tìm kiếm từ khóa chung khi chọn 'Tất cả' hoặc các cảm biến
       if (search) {
         const q = search.toLowerCase();
         const match =
@@ -31,7 +44,7 @@ export const SensorDataPage: React.FC = () => {
           r.deviceId.toLowerCase().includes(q);
         if (!match) return false;
       }
-      if (sensorTypeFilter !== 'all' && r.sensorType !== sensorTypeFilter) return false;
+
       return true;
     });
   }, [sensorRecords, search, sensorTypeFilter]);

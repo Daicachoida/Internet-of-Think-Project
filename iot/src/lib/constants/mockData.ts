@@ -52,12 +52,12 @@ export const INITIAL_SENSOR_RECORDS: SensorRecord[] = [
 ];
 
 export const INITIAL_ACTION_RECORDS: ActionRecord[] = [
-  { id: "#H15", time: "2026-09-22 20:15:05", device: "LED 2 (LED_Luminosity)", deviceId: 2, action: DeviceActionEnum.ON, status: DeviceStatusEnum.ON, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
-  { id: "#H14", time: "2026-09-22 20:10:12", device: "LED 1 (LED_Temperature)", deviceId: 1, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.OFF, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
-  { id: "#H13", time: "2026-09-22 19:55:40", device: "LED 3 (LED_Humidity)", deviceId: 3, action: DeviceActionEnum.ON, status: DeviceStatusEnum.ON, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
-  { id: "#H12", time: "2026-09-22 19:30:18", device: "LED 2 (LED_Luminosity)", deviceId: 2, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.OFF, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
-  { id: "#H11", time: "2026-09-22 19:00:05", device: "LED 1 (LED_Temperature)", deviceId: 1, action: DeviceActionEnum.ON, status: DeviceStatusEnum.ON, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
-  { id: "#H10", time: "2026-09-22 18:45:22", device: "LED 3 (LED_Humidity)", deviceId: 3, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.OFF, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
-  { id: "#H09", time: "2026-09-22 18:15:30", device: "LED 2 (LED_Luminosity)", deviceId: 2, action: DeviceActionEnum.ON, status: DeviceStatusEnum.ON, operator: "Nguyễn Anh Tú", source: "Tự động (Lịch)" },
-  { id: "#H08", time: "2026-09-22 17:50:02", device: "LED 1 (LED_Temperature)", deviceId: 1, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.OFF, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H15", time: "22/09/2026 20:15:05", device: "LED 2 (LED_Luminosity)", deviceId: 2, action: DeviceActionEnum.ON, status: DeviceStatusEnum.SUCCESS, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H14", time: "22/09/2026 20:10:12", device: "LED 1 (LED_Temperature)", deviceId: 1, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.SUCCESS, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H13", time: "22/09/2026 19:55:40", device: "LED 3 (LED_Humidity)", deviceId: 3, action: DeviceActionEnum.ON, status: DeviceStatusEnum.SUCCESS, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H12", time: "22/09/2026 19:30:18", device: "LED 2 (LED_Luminosity)", deviceId: 2, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.SUCCESS, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H11", time: "22/09/2026 19:00:05", device: "LED 1 (LED_Temperature)", deviceId: 1, action: DeviceActionEnum.ON, status: DeviceStatusEnum.SUCCESS, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H10", time: "22/09/2026 18:45:22", device: "LED 3 (LED_Humidity)", deviceId: 3, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.FAIL, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
+  { id: "#H09", time: "22/09/2026 18:15:30", device: "LED 2 (LED_Luminosity)", deviceId: 2, action: DeviceActionEnum.ON, status: DeviceStatusEnum.SUCCESS, operator: "Nguyễn Anh Tú", source: "Tự động (Lịch)" },
+  { id: "#H08", time: "22/09/2026 17:50:02", device: "LED 1 (LED_Temperature)", deviceId: 1, action: DeviceActionEnum.OFF, status: DeviceStatusEnum.FAIL, operator: "Nguyễn Anh Tú", source: "MQTT / Web" },
 ];

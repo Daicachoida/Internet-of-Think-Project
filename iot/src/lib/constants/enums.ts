@@ -15,10 +15,9 @@ export enum DeviceActionEnum {
 }
 
 export enum DeviceStatusEnum {
-  ON = 'ON',
-  OFF = 'OFF',
+  SUCCESS = 'Success',
   LOADING = 'Loading',
-  FAILED = 'Failed'
+  FAIL = 'Fail'
 }
 
 export enum AuthRoleEnum {

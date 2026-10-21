@@ -42,12 +42,11 @@ export async function fetchActionHistoryApi(params: ActionQueryParams): Promise<
 
   const items: ActionRecord[] = res.items.map((item) => {
     const isSuccess = item.status.toLowerCase() === 'success';
-    const isPending = item.status.toLowerCase() === 'pending';
-    const isActionOn = item.action.toUpperCase() === 'ON';
+    const isPending = item.status.toLowerCase() === 'pending' || item.status.toLowerCase() === 'loading';
 
-    let displayStatus: DeviceStatusEnum | string = DeviceStatusEnum.FAILED;
+    let displayStatus: DeviceStatusEnum | string = DeviceStatusEnum.FAIL;
     if (isPending) displayStatus = DeviceStatusEnum.LOADING;
-    else if (isSuccess) displayStatus = isActionOn ? DeviceStatusEnum.ON : DeviceStatusEnum.OFF;
+    else if (isSuccess) displayStatus = DeviceStatusEnum.SUCCESS;
 
     const d = new Date(item.createdAt);
     const timeFormatted = `${d.toLocaleDateString('vi-VN')} ${d.toLocaleTimeString('vi-VN')}`;

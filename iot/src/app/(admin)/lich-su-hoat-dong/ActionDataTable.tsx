@@ -12,13 +12,11 @@ export const ActionDataTable: React.FC<ActionDataTableProps> = ({ records }) => 
   // ─── Function (useCallback) ────────────────────────────────────────────────
   const getStatusBadge = useCallback((status: ActionRecord['status']) => {
     switch (status) {
-      case DeviceStatusEnum.ON:
+      case DeviceStatusEnum.SUCCESS:
         return 'bg-emerald-50 text-emerald-700 border-emerald-200';
-      case DeviceStatusEnum.OFF:
-        return 'bg-slate-100 text-slate-700 border-slate-200';
       case DeviceStatusEnum.LOADING:
         return 'bg-amber-50 text-amber-700 border-amber-200 animate-pulse';
-      case DeviceStatusEnum.FAILED:
+      case DeviceStatusEnum.FAIL:
         return 'bg-rose-50 text-rose-700 border-rose-200';
       default:
         return 'bg-slate-100 text-slate-700 border-slate-200';
@@ -80,13 +78,11 @@ export const ActionDataTable: React.FC<ActionDataTableProps> = ({ records }) => 
                   >
                     <span
                       className={`w-1.5 h-1.5 rounded-full ${
-                        row.status === DeviceStatusEnum.ON
+                        row.status === DeviceStatusEnum.SUCCESS
                           ? 'bg-emerald-500'
                           : row.status === DeviceStatusEnum.LOADING
                           ? 'bg-amber-500 animate-spin'
-                          : row.status === DeviceStatusEnum.FAILED
-                          ? 'bg-rose-500'
-                          : 'bg-slate-400'
+                          : 'bg-rose-500'
                       }`}
                     />
                     {row.status}

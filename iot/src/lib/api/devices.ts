@@ -41,9 +41,7 @@ export async function sendDeviceControlCommand(
     device: deviceName,
     deviceId,
     action,
-    status: isSuccess
-      ? (res.state.toUpperCase() === 'ON' ? DeviceStatusEnum.ON : DeviceStatusEnum.OFF)
-      : DeviceStatusEnum.FAILED,
+    status: isSuccess ? DeviceStatusEnum.SUCCESS : DeviceStatusEnum.FAIL,
     operator: 'Nguyễn Anh Tú',
     source: 'MQTT / Web'
   };

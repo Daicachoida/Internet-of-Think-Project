@@ -15,10 +15,9 @@ export const ACTION_FILTER_OPTIONS = [
 
 export const STATUS_FILTER_OPTIONS = [
   { value: 'all', label: 'Status: All' },
-  { value: DeviceStatusEnum.ON, label: 'Status: ON' },
-  { value: DeviceStatusEnum.OFF, label: 'Status: OFF' },
+  { value: DeviceStatusEnum.SUCCESS, label: 'Status: Success' },
   { value: DeviceStatusEnum.LOADING, label: 'Status: Loading' },
-  { value: DeviceStatusEnum.FAILED, label: 'Status: Failed' },
+  { value: DeviceStatusEnum.FAIL, label: 'Status: Fail' },
 ];
 
 export const ACTION_TABLE_COLUMNS = [

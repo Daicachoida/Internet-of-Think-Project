@@ -1,0 +1,39 @@
+# Node.js / Frontend
+**/node_modules/
+**/dist/
+**/.pnp
+**/.pnp.js
+**/.yarn/cache
+**/.yarn/unplugged
+**/.yarn/build-state.yml
+**/.yarn/install-state.gz
+**/.pnp.*
+
+# .NET / Backend
+**/[Bb]in/
+**/[Oo]bj/
+**/.dotnet/
+**/.vs/
+**/*.user
+**/*.suo
+**/*.userprefs
+**/*.rsuser
+
+# IDEs & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs & temp
+.git_backup/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db

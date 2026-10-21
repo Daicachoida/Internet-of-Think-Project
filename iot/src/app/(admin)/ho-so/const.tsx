@@ -5,19 +5,19 @@ export const PROFILE_RESOURCES: ProfileResourceItem[] = [
   {
     title: 'GitHub Repository',
     desc: 'Mã nguồn toàn bộ dự án',
-    url: 'https://github.com/nguyenanhtu/iot-webapp',
+    url: 'https://github.com/Daicachoida/Internet-of-Think-Project',
     icon: Github,
   },
   {
     title: 'Figma UI Design',
     desc: 'Bản vẽ thiết kế giao diện Dashboard',
-    url: 'https://figma.com/@nguyenanhtu/iot-ui',
+    url: 'https://www.figma.com/make/2qeZ7RsPo7xQFcaX64S9nG/User-greeting?p=f&t=VFK9QZDTJdocEFbN-0',
     icon: Globe,
   },
   {
-    title: 'Postman API Docs',
+    title: 'Swagger API Docs',
     desc: 'Tài liệu đặc tả các RESTful Endpoints',
-    url: 'https://documenter.getpostman.com/view/iot-apis',
+    url: 'http://localhost:5171/swagger/index.html',
     icon: Zap,
   },
   {

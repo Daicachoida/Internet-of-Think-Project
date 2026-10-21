@@ -37,7 +37,7 @@ export async function sendDeviceControlCommand(
 
   const actionLog: ActionRecord = {
     id: `#H${Date.now().toString().slice(-4)}`,
-    time: new Date().toLocaleTimeString('vi-VN') + ' ' + new Date().toLocaleDateString('vi-VN'),
+    time: new Date().toLocaleDateString('vi-VN') + ' ' + new Date().toLocaleTimeString('vi-VN'),
     device: deviceName,
     deviceId,
     action,

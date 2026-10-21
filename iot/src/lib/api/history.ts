@@ -50,7 +50,7 @@ export async function fetchActionHistoryApi(params: ActionQueryParams): Promise<
     else if (isSuccess) displayStatus = isActionOn ? DeviceStatusEnum.ON : DeviceStatusEnum.OFF;
 
     const d = new Date(item.createdAt);
-    const timeFormatted = `${d.toLocaleTimeString('vi-VN')} ${d.toLocaleDateString('vi-VN')}`;
+    const timeFormatted = `${d.toLocaleDateString('vi-VN')} ${d.toLocaleTimeString('vi-VN')}`;
 
     return {
       id: `#H${String(item.id).padStart(4, '0')}`,

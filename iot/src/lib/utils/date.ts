@@ -19,7 +19,7 @@ export function formatDateTime(date: Date | string): string {
   const hours = pad(d.getHours());
   const minutes = pad(d.getMinutes());
   const seconds = pad(d.getSeconds());
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
 
 export function formatDate(date: Date | string): string {

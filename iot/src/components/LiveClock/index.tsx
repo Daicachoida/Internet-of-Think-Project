@@ -20,6 +20,15 @@ export const LiveClock: React.FC<LiveClockProps> = ({ className = '' }) => {
     >
       <Clock size={16} className="text-[#7a1f36] shrink-0" />
       <div className="flex items-center gap-2">
+        <span className="text-xs text-slate-600 font-medium" style={MONO}>
+          {time.toLocaleDateString('vi-VN', {
+            weekday: 'short',
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+          })}
+        </span>
+        <span className="text-xs text-slate-400">|</span>
         <span
           className="text-sm font-semibold tracking-wider text-slate-800 leading-none"
           style={MONO}
@@ -29,15 +38,6 @@ export const LiveClock: React.FC<LiveClockProps> = ({ className = '' }) => {
             minute: '2-digit',
             second: '2-digit',
             hour12: false
-          })}
-        </span>
-        <span className="text-xs text-slate-400">|</span>
-        <span className="text-xs text-slate-500 font-medium" style={MONO}>
-          {time.toLocaleDateString('vi-VN', {
-            weekday: 'short',
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
           })}
         </span>
       </div>

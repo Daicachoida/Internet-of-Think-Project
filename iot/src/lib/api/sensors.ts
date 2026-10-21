@@ -92,7 +92,7 @@ export async function fetchSensorHistoryApi(params: SensorQueryParams): Promise<
     }
 
     const d = new Date(item.createdAt);
-    const timeFormatted = `${d.toLocaleTimeString('vi-VN')} ${d.toLocaleDateString('vi-VN')}`;
+    const timeFormatted = `${d.toLocaleDateString('vi-VN')} ${d.toLocaleTimeString('vi-VN')}`;
 
     return {
       id: `#S${String(item.id).padStart(4, '0')}`,
